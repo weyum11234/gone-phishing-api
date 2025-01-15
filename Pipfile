@@ -16,6 +16,7 @@ tld = "*"
 pyspellchecker = "*"
 scikit-learn = "==1.6.0"
 pandas = "*"
+gunicorn = "*"
 
 [dev-packages]
 
