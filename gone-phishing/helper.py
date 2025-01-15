@@ -6,6 +6,7 @@
 import re
 import math
 import joblib
+import zipfile
 import pandas as pd
 from tld import get_tld
 from collections import Counter
@@ -26,6 +27,8 @@ except Exception as e:
     le = None
 
 try:
+    with zipfile.ZipFile('resources/model.zip', 'r') as z:
+        z.extractall('resources/')
     model = joblib.load('resources/model.pkl')
 except Exception as e:
     print('Error loading model:', e)
