@@ -15,18 +15,18 @@ from sklearn.preprocessing import LabelEncoder
 
 # Setup tools
 
-with open('.resources/phishing_keywords.txt', 'r') as file:
+with open('resources/phishing_keywords.txt', 'r') as file:
     phishing_keywords = file.read().splitlines()
 file.close()
 
 try:
-    le = joblib.load('.resources/tld_encoder.pkl')
+    le = joblib.load('resources/tld_encoder.pkl')
 except Exception as e:
     print('Error loading TLD encoder:', e)
     le = None
 
 try:
-    model = joblib.load('.resources/model.pkl')
+    model = joblib.load('resources/model.pkl')
 except Exception as e:
     print('Error loading model:', e)
     model = None
