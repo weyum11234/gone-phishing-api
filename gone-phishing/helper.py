@@ -6,7 +6,6 @@
 import re
 import math
 import joblib
-import zipfile
 import pandas as pd
 from tld import get_tld
 from collections import Counter
@@ -27,15 +26,13 @@ except Exception as e:
 
 try:
     with open('resources/model_reassembled.pkl', 'wb') as output_file:
-        for chunk_id in range(219):
+        for chunk_id in range(88):
             with open(f'resources/model_part_{chunk_id}.pkl', 'rb') as input_file:
                 output_file.write(input_file.read())
     model = joblib.load('resources/model_reassembled.pkl')
 except Exception as e:
     print('Error loading model:', e)
     model = None
-
-model = None
 
 spell_check = SpellChecker()
 
