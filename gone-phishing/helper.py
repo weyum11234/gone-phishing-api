@@ -26,13 +26,15 @@ except Exception as e:
     print('Error loading TLD encoder:', e)
     le = None
 
-try:
+'''try:
     with zipfile.ZipFile('resources/model.zip', 'r') as z:
         z.extractall('resources/')
     model = joblib.load('resources/model.pkl')
 except Exception as e:
     print('Error loading model:', e)
-    model = None
+    model = None'''
+
+model = None
 
 spell_check = SpellChecker()
 
