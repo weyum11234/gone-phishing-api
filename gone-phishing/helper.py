@@ -18,7 +18,6 @@ from sklearn.preprocessing import LabelEncoder
 
 with open('resources/phishing_keywords.txt', 'r') as file:
     phishing_keywords = file.read().splitlines()
-file.close()
 
 try:
     le = joblib.load('resources/tld_encoder.pkl')
@@ -26,13 +25,15 @@ except Exception as e:
     print('Error loading TLD encoder:', e)
     le = None
 
-'''try:
-    with zipfile.ZipFile('resources/model.zip', 'r') as z:
-        z.extractall('resources/')
-    model = joblib.load('resources/model.pkl')
+try:
+    with open('resources/model_reassembled.pkl', 'wb') as output_file:
+        for chunk_id in range(219):
+            with open(f'resources/model_part_{chunk_id}.pkl', 'rb') as input_file:
+                output_file.write(input_file.read())
+    model = joblib.load('resources/model_reassembled.pkl')
 except Exception as e:
     print('Error loading model:', e)
-    model = None'''
+    model = None
 
 model = None
 

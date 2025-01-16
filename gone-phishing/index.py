@@ -29,6 +29,8 @@ def predict():
     if not helper.le:
         return jsonify({'error': 'TLD encoder not loaded'}), 500
     
+    print(helper.model)
+
     if not helper.model:
         return jsonify({'error': 'Model not loaded'}), 500
 

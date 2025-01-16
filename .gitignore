@@ -1,2 +1,3 @@
-resources/model.pkl
 bootstrap.sh
+split.py
+model.pkl
