@@ -25,11 +25,7 @@ except Exception as e:
     le = None
 
 try:
-    with open('resources/model_reassembled.pkl', 'wb') as output_file:
-        for chunk_id in range(88):
-            with open(f'resources/model_part_{chunk_id}.pkl', 'rb') as input_file:
-                output_file.write(input_file.read())
-    model = joblib.load('resources/model_reassembled.pkl')
+    model = joblib.load('resources/model.pkl')
 except Exception as e:
     print('Error loading model:', e)
     model = None
