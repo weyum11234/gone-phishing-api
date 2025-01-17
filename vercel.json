@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "builds": [
-        {"src": "/gone-phishing/index.py", "use": "@vercel/python", "config": {"buildCommand": "pipenv install --deploy --ignore-pipfile"}}
-    ],
-    "routes": [
-        {"src": "/gone-phishing/.*", "dest": "/gone-phishing/index.py"}
-    ]
-}
