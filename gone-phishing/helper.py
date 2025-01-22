@@ -25,7 +25,7 @@ except Exception as e:
     le = None
 
 try:
-    model = joblib.load('resources/model.pkl')
+    model = joblib.load('resources/logistic_regression.pkl')
 except Exception as e:
     print('Error loading model:', e)
     model = None
